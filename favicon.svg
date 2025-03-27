@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Arkaplan -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6366f1" />
+      <stop offset="100%" stop-color="#ec4899" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Arkaplan daire -->
+  <circle cx="32" cy="32" r="30" fill="url(#bgGradient)" />
+  
+  <!-- H harfi - basitleştirilmiş -->
+  <path d="M 20 15 L 20 49 M 20 32 L 44 32 M 44 15 L 44 49" fill="none" stroke="white" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" />
+  
+  <!-- Parlama efekti -->
+  <circle cx="32" cy="32" r="28" fill="none" stroke="white" stroke-width="1" opacity="0.3" />
+  <circle cx="32" cy="32" r="24" fill="none" stroke="white" stroke-width="1" opacity="0.2" />
+</svg>
