@@ -1,0 +1,309 @@
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes glowPulse {
+  0% {
+    box-shadow: 0 0 5px rgba(99, 102, 241, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 15px rgba(99, 102, 241, 0.5);
+  }
+  100% {
+    box-shadow: 0 0 5px rgba(99, 102, 241, 0.3);
+  }
+}
+
+@keyframes textGlow {
+  0% {
+    text-shadow: 0 0 5px rgba(99, 102, 241, 0.5),
+      0 0 10px rgba(99, 102, 241, 0.3);
+  }
+  50% {
+    text-shadow: 0 0 10px rgba(99, 102, 241, 0.7),
+      0 0 20px rgba(99, 102, 241, 0.5);
+  }
+  100% {
+    text-shadow: 0 0 5px rgba(99, 102, 241, 0.5),
+      0 0 10px rgba(99, 102, 241, 0.3);
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--dark-color);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.6;
+  color: var(--text-primary);
+  background-image: linear-gradient(
+    to bottom,
+    var(--darker-color),
+    var(--dark-color)
+  );
+}
+
+main {
+  flex: 1 0 auto;
+  background-color: var(--medium-dark-color);
+  box-shadow: var(--box-shadow);
+  border: 1px solid var(--border-color);
+  animation: fadeIn 0.5s ease-out;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+h1 {
+  color: var(--game-primary);
+  text-shadow: 0 0 10px rgba(99, 102, 241, 0.3);
+}
+
+h2 {
+  color: var(--game-primary);
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 0.5rem;
+}
+
+p {
+  margin-bottom: 1rem;
+  color: var(--text-secondary);
+}
+
+a {
+  color: var(--game-primary);
+  text-decoration: none;
+  transition: all var(--transition-speed);
+  position: relative;
+}
+
+a:hover {
+  color: var(--game-accent);
+  text-shadow: 0 0 8px rgba(236, 72, 153, 0.5);
+}
+
+a.fancy-link::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: var(--game-accent);
+  transition: width var(--transition-speed);
+}
+
+a.fancy-link:hover::after {
+  width: 100%;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--border-radius);
+}
+
+input,
+select,
+textarea,
+.form-control,
+.form-select {
+  background-color: var(--light-dark-color);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  transition: all var(--transition-speed);
+}
+
+.form-control:focus,
+.form-select:focus {
+  background-color: var(--medium-dark-color);
+  border-color: var(--game-primary);
+  color: var(--text-primary);
+  box-shadow: 0 0 0 0.25rem rgba(99, 102, 241, 0.25);
+}
+
+.input-group-text {
+  background-color: var(--medium-dark-color);
+  border-color: var(--border-color);
+  color: var(--text-secondary);
+}
+
+.btn-primary {
+  background-color: var(--game-primary);
+  border-color: var(--game-primary);
+  transition: all var(--transition-speed);
+}
+
+.btn-primary:hover {
+  background-color: var(--game-secondary);
+  border-color: var(--game-secondary);
+  box-shadow: var(--glow-shadow);
+  transform: translateY(-2px);
+}
+
+.btn-outline-primary {
+  color: var(--game-primary);
+  border-color: var(--game-primary);
+  transition: all var(--transition-speed);
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--game-primary);
+  color: var(--text-primary);
+  box-shadow: var(--glow-shadow);
+  transform: translateY(-2px);
+}
+
+.btn-outline-light {
+  color: var(--text-secondary);
+  border-color: var(--border-color);
+  transition: all var(--transition-speed);
+}
+
+.btn-outline-light:hover {
+  background-color: var(--light-dark-color);
+  color: var(--text-primary);
+  transform: translateY(-2px);
+}
+
+.btn-outline-secondary {
+  color: var(--text-secondary);
+  border-color: var(--border-color);
+  transition: all var(--transition-speed);
+}
+
+.btn-outline-secondary:hover {
+  background-color: var(--light-dark-color);
+  color: var(--text-primary);
+  transform: translateY(-2px);
+}
+
+.btn-success {
+  background-color: var(--game-success);
+  border-color: var(--game-success);
+}
+
+.btn-danger {
+  background-color: var(--game-danger);
+  border-color: var(--game-danger);
+}
+
+.btn-warning {
+  background-color: var(--game-warning);
+  border-color: var(--game-warning);
+}
+
+.btn-info {
+  background-color: var(--game-info);
+  border-color: var(--game-info);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--medium-dark-color);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--light-dark-color);
+  border-radius: 10px;
+  border: 2px solid var(--medium-dark-color);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--game-primary);
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease forwards;
+}
+
+.pulse {
+  animation: pulse 1.5s infinite;
+}
+
+.glow {
+  animation: glowPulse 2s infinite;
+}
+
+.text-glow {
+  animation: textGlow 2s infinite;
+}
+
+.border-game {
+  border: 1px solid var(--border-color);
+  transition: border-color var(--transition-speed);
+}
+
+.border-game:hover {
+  border-color: var(--game-primary);
+  box-shadow: var(--glow-shadow);
+}
+
+.card-game {
+  background-color: var(--medium-dark-color);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  transition: all var(--transition-speed);
+  overflow: hidden;
+}
+
+.card-game:hover {
+  border-color: var(--game-primary);
+  box-shadow: var(--hover-shadow);
+  transform: translateY(-5px);
+}
+
+.card-game .card-header {
+  background-color: var(--light-dark-color);
+  border-bottom: 1px solid var(--border-color);
+  color: var(--text-primary);
+}
+
+.card-game .card-body {
+  color: var(--text-secondary);
+}
+
+.card-game .card-footer {
+  background-color: var(--light-dark-color);
+  border-top: 1px solid var(--border-color);
+}
