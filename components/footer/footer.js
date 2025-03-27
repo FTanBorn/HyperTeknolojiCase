@@ -15,10 +15,10 @@ export function createFooter() {
                 <a href="#" aria-label="Discord" title="Discord"><i class="fab fa-discord"></i></a>
               </div>
               <div class="footer-payments mt-3">
-                <img src="https:
-                <img src="https:
-                <img src="https:
-                <img src="https:
+                <img src="https://cdn-icons-png.flaticon.com/128/349/349221.png" alt="Visa" />
+                <img src="https://cdn-icons-png.flaticon.com/128/349/349230.png" alt="MasterCard" />
+                <img src="https://cdn-icons-png.flaticon.com/128/349/349228.png" alt="PayPal" />
+                <img src="https://cdn-icons-png.flaticon.com/128/5968/5968299.png" alt="BTC" />
               </div>
             </div>
             <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
